@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "daisyui";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -10,6 +11,10 @@
   --color-primary-amber: #f59e0b;
   --color-secondary-indigo: #6366f1;
   --color-secondary-blue: #3b82f6;
+  --color-purple: #f30ad6;
+  --color-blue: #0cd2fd;
+  --color-soft-purple: #806ee9;
+  --color-product-card: #1e1b29;
 }
 
 @theme inline {

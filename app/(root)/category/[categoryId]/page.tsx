@@ -1,12 +1,12 @@
 import React from "react";
-import all_products from "@/assets/all_product";
+import all_product from "@/assets/data";
 import Image from "next/image";
 
 const page = async ({ params }: { params: { categoryId: string } }) => {
   const { categoryId } = params;
 
   // Filter products based on the categoryId
-  const filteredProducts = all_products.filter(
+  const filteredProducts = all_product.filter(
     (product) => product.category === categoryId
   );
 
