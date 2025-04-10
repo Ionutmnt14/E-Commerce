@@ -34,60 +34,110 @@ import p33_img from "./product_33.png";
 import p34_img from "./product_34.png";
 import p35_img from "./product_35.png";
 import p36_img from "./product_36.png";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+
+export const options = [
+  {
+    name: "Company",
+    className:
+      "hover:text-soft-purple transition-all duration-500 text-sm md:text-base",
+  },
+  {
+    name: "Products",
+    className:
+      "hover:text-soft-purple transition-all duration-500 text-sm md:text-base",
+  },
+  {
+    name: "About",
+    className:
+      "hover:text-soft-purple transition-all duration-500 text-sm md:text-base",
+  },
+  {
+    name: "Contact",
+    className:
+      "hover:text-soft-purple transition-all duration-500 text-sm md:text-base",
+  },
+  {
+    name: "Offices",
+    className:
+      "hover:text-soft-purple transition-all duration-500 text-sm md:text-base",
+  },
+];
+
+export const socials = [
+  {
+    icon: (
+      <FaFacebook className="hover:text-soft-purple transition-all duration-500 w-5 h-5 md:w-6 md:h-6" />
+    ),
+    id: 1,
+  },
+  {
+    icon: (
+      <FaInstagram className="hover:text-soft-purple transition-all duration-500 w-5 h-5 md:w-6 md:h-6" />
+    ),
+    id: 2,
+  },
+  {
+    icon: (
+      <FaTiktok className="hover:text-soft-purple transition-all duration-500 w-5 h-5 md:w-6 md:h-6" />
+    ),
+    id: 3,
+  },
+];
 
 export const new_collections = [
   {
     id: 12,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: p1_img,
+    name: "Black & White Casual Jacket",
+    image: p36_img,
     new_price: 50.0,
     old_price: 80.5,
   },
   {
     id: 35,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    image: p2_img,
+    name: "White Hooded Winter Jacket",
+    image: p22_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
     id: 14,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    image: p3_img,
+    name: "Red & Navy Urban Windbreaker",
+    image: p16_img,
     new_price: 60.0,
     old_price: 100.5,
   },
   {
     id: 8,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: p4_img,
+    name: "Burgundy Cropped Hoodie",
+    image: p10_img,
     new_price: 100.0,
     old_price: 150.0,
   },
   {
     id: 15,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Pink Knitted Crop Top",
     image: p5_img,
     new_price: 50.0,
     old_price: 80.5,
   },
   {
     id: 2,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: p6_img,
+    name: "Olive Quilted Kids Jacket",
+    image: p30_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
     id: 17,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
-    image: p7_img,
+    name: "White & Black Zip-Up Jacket",
+    image: p19_img,
     new_price: 60.0,
     old_price: 100.5,
   },
   {
     id: 28,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Black Floral V-Neck Blouse",
     image: p8_img,
     new_price: 100.0,
     old_price: 150.0,
@@ -101,7 +151,7 @@ export const data_product = [
     image: p1_img,
     new_price: 50.0,
     old_price: 80.5,
-    category: "women",
+    category: "women clothing",
   },
   {
     id: 2,
@@ -109,7 +159,7 @@ export const data_product = [
     image: p2_img,
     new_price: 85.0,
     old_price: 120.5,
-    category: "women",
+    category: "women clothing",
   },
   {
     id: 3,
@@ -117,7 +167,7 @@ export const data_product = [
     image: p3_img,
     new_price: 60.0,
     old_price: 100.5,
-    category: "women",
+    category: "women clothing",
   },
   {
     id: 4,
@@ -125,7 +175,7 @@ export const data_product = [
     image: p4_img,
     new_price: 100.0,
     old_price: 150.0,
-    category: "women",
+    category: "women clothing",
   },
 ];
 

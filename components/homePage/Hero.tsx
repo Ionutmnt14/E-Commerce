@@ -18,11 +18,11 @@ const Hero = () => {
             together—because your wardrobe <br /> should be as unique as you
             are.
           </p>
-          <Button className="group max-w-3xs">
+          <Button className="group max-w-3xs w-48 h-14 text-lg cursor-pointer">
             <p>Latest Collection</p>
             <IoIosArrowRoundForward
-              size={100}
               className="group-hover:translate-x-1 transition-all duration-300"
+              style={{ width: "28px", height: "28px" }}
             />
           </Button>
         </div>

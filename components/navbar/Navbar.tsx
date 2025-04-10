@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-gray-950 relative transition-all">
+    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-soft-purple/50 bg-gray-950 relative transition-all">
       <div className="flex items-center gap-8 sm:justify-between w-full">
         <Link
           href={"/"}
@@ -51,7 +51,9 @@ const Navbar = () => {
           </div>
 
           <div className="relative cursor-pointer">
-            <IoCartOutline className="size-7" />
+            <Link href={"/cart"}>
+              <IoCartOutline className="size-7" />
+            </Link>
             <button className="absolute -top-2 -right-3 text-xs text-white bg-soft-purple w-[18px] h-[18px] rounded-full">
               3
             </button>

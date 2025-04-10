@@ -16,26 +16,27 @@ const ProductCard = ({
   image: StaticImageData | string;
   new_price: number;
   old_price: number;
-  category: string;
+  category?: string;
 }) => {
   const [count, setCount] = useState(0);
 
   return (
     <div className="hover:bg-soft-purple/20 transition-all duration-500 p-3 min-w-56 max-w-sm w-full rounded-lg">
       <Image src={image} alt={name} className="rounded-lg " />
-      <p className="text-xs text-gray-500 mt-2 capitalize">
-        {category} clothing
-      </p>
-      <p className="text-sm mt-1">{name}</p>
+      <p className="text-xs text-gray-500 mt-2 capitalize">{category}</p>
+      <p className="text-lg mt-1">{name}</p>
       <div className="flex flex-row items-center justify-between mt-2">
         <div className="flex flex-col items-start justify-center ">
-          <p className="text-xl text-soft-purple font-medium">${new_price}</p>
+          <p className="text-2xl text-soft-purple font-medium">
+            <sup>$</sup>
+            <strong className="">{new_price}</strong>
+          </p>
           <p className="text-sm text-gray-500 line-through">${old_price}</p>
         </div>
         <div>
           {count === 0 ? (
-            <Button onClick={() => setCount(1)}>
-              <IoCartOutline />
+            <Button onClick={() => setCount(1)} className="cursor-pointer">
+              <IoCartOutline style={{ width: "18px", height: "18px" }} />
               Add to Cart
             </Button>
           ) : (
