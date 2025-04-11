@@ -34,7 +34,12 @@ import p33_img from "./product_33.png";
 import p34_img from "./product_34.png";
 import p35_img from "./product_35.png";
 import p36_img from "./product_36.png";
+import banner_kids from "./banner_kids.png";
+import banner_men from "./banner_mens.png";
+import banner_women from "./banner_women.png";
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+
+export { banner_men, banner_women, banner_kids };
 
 export const options = [
   {

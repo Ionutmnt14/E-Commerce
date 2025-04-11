@@ -1,5 +1,4 @@
 import Banner from "@/components/homePage/Banner";
-import Footer from "@/components/homePage/Footer";
 import Hero from "@/components/homePage/Hero";
 import NewCollection from "@/components/homePage/NewCollection";
 import Newsletter from "@/components/homePage/Newsletter";
@@ -13,7 +12,6 @@ export default function Home() {
       <Banner />
       <NewCollection />
       <Newsletter />
-      <Footer />
     </div>
   );
 }

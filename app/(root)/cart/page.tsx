@@ -57,7 +57,7 @@ const Cart = () => {
     },
   ];
   return (
-    <div className="flex flex-col md:flex-row py-16 max-w-6xl w-full h-[90vh] px-6 mx-auto gap-6">
+    <div className="flex flex-col md:flex-row py-16 max-w-6xl w-full h-full px-6 mx-auto gap-6">
       <div className="flex-1 max-w-4xl">
         <h1 className="text-3xl text-soft-purple font-bold mb-6 flex flex-col">
           Shopping Cart{" "}
@@ -150,12 +150,14 @@ const Cart = () => {
                 >
                   New York, USA
                 </p>
-                <p
-                  onClick={() => setShowAddress(false)}
-                  className="text-soft-purple text-center cursor-pointer p-2 hover:bg-soft-purple/10"
-                >
-                  Add address
-                </p>
+                <Link href={"/add-address"}>
+                  <p
+                    onClick={() => setShowAddress(false)}
+                    className="text-soft-purple text-center cursor-pointer p-2 hover:bg-soft-purple/10"
+                  >
+                    Add address
+                  </p>
+                </Link>
               </div>
             )}
           </div>

@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="w-full h-[1px] bg-soft-purple/50 rounded-r-full rounded-l-full" />
+        <div className="w-full max-w-7xl h-[1px] bg-soft-purple/50 rounded-r-full rounded-l-full" />
         <div className="mb-6 text-sm md:text-base">
           <p>© 2025 Wearify™. All Rights Reserved.</p>
         </div>
