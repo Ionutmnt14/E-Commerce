@@ -7,7 +7,7 @@ import Women from "@/components/homePage/Women";
 
 export default function Home() {
   return (
-    <div className="px-6 md:px-16 lg:px-24 xl:px-32 gap-64 flex flex-col">
+    <div className="px-6 md:px-16 lg:px-24 xl:px-32 gap-64 flex flex-col mx-auto">
       <Hero />
       <Women />
       <Banner />

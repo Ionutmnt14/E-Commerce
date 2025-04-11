@@ -6,7 +6,7 @@ const NewCollection = () => {
   return (
     <>
       <div className="w-full items-center flex flex-col">
-        <div className="pb-24 flex flex-col items-center justify-center">
+        <div className=" flex flex-col items-center justify-center mb-12">
           <h1 className="text-5xl font-medium">New Collections</h1>
           <div className="w-40 h-1.5 rounded-l-full rounded-r-full bg-soft-purple mt-3" />
         </div>

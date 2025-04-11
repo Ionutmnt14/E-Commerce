@@ -21,7 +21,7 @@ const Newsletter = () => {
             <TfiEmail size={24} className="text-soft-purple" />
           </div>
           <input
-            className="block p-3 pl-10 text-sm border border-gray-300 rounded-md h-full md:border-r-0 outline-none w-full md:rounded-r-none px-3 placeholder:pl-3 placeholder:text-base"
+            className="block p-3 pl-10 text-sm border border-gray-300 rounded-md h-full md:border-r-0 outline-none w-full md:rounded-r-none px-3 placeholder:pl-3 md:placeholder:text-base text-sm"
             type="text"
             placeholder="Enter your email"
             required
