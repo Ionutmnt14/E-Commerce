@@ -1,7 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { useState } from "react";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { CiCircleRemove } from "react-icons/ci";
 
 const Cart = () => {
   const [showAddress, setShowAddress] = useState(false);
@@ -54,11 +57,11 @@ const Cart = () => {
     },
   ];
   return (
-    <div className="flex flex-col md:flex-row py-16 max-w-6xl w-full px-6 mx-auto">
+    <div className="flex flex-col md:flex-row py-16 max-w-6xl w-full h-[90vh] px-6 mx-auto gap-6">
       <div className="flex-1 max-w-4xl">
-        <h1 className="text-3xl font-medium mb-6">
+        <h1 className="text-3xl text-soft-purple font-bold mb-6 flex flex-col">
           Shopping Cart{" "}
-          <span className="text-sm text-soft-purple">3 Items</span>
+          <span className="text-sm text-white font-medium">3 Items</span>
         </h1>
 
         <div className="grid grid-cols-[2fr_1fr_1fr]  text-base font-medium pb-3">
@@ -70,10 +73,10 @@ const Cart = () => {
         {products.map((product, index) => (
           <div
             key={index}
-            className="grid grid-cols-[2fr_1fr_1fr]  items-center text-sm md:text-base font-medium pt-3"
+            className="grid grid-cols-[2fr_1fr_1fr]  items-center text-sm md:text-base font-medium pt-3 border-b border-soft-purple/20 pb-3"
           >
             <div className="flex items-center md:gap-6 gap-3">
-              <div className="cursor-pointer w-24 h-24 flex items-center justify-center border border-gray-300 rounded">
+              <div className="cursor-pointer w-24 h-24 flex items-center justify-center border border-soft-purple/70 rounded">
                 <img
                   className="max-w-full h-full object-cover"
                   src={product.image}
@@ -86,9 +89,9 @@ const Cart = () => {
                   <p>
                     Size: <span>{product.size || "N/A"}</span>
                   </p>
-                  <div className="flex items-center">
-                    <p>Qty:</p>
-                    <select className="outline-none">
+                  <div className="flex items-center text-gray-500 text-2xs">
+                    <p>Quantity:</p>
+                    <select className="outline-none text-gray-500">
                       {Array(5)
                         .fill("")
                         .map((_, index) => (
@@ -101,54 +104,33 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <p className="text-center">
-              ${product.offerPrice * product.quantity}
+            <p className="text-center text-soft-purple">
+              <sup>$</sup>
+              {product.offerPrice * product.quantity}
             </p>
-            <button className="cursor-pointer mx-auto">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="m12.5 7.5-5 5m0-5 5 5m5.833-2.5a8.333 8.333 0 1 1-16.667 0 8.333 8.333 0 0 1 16.667 0"
-                  stroke="#FF532E"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <button className="cursor-pointer mx-auto text-red-500">
+              <CiCircleRemove
+                width={40}
+                hanging={20}
+                style={{ width: "30px", height: "30px" }}
+              />
             </button>
           </div>
         ))}
 
         <button className="group cursor-pointer flex items-center mt-8 gap-2 text-soft-purple font-medium">
-          <svg
-            width="15"
-            height="11"
-            viewBox="0 0 15 11"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14.09 5.5H1M6.143 10 1 5.5 6.143 1"
-              stroke="#615fff"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          Continue Shopping
+          <Link href={"/"} className="flex items-center justify-center gap-1">
+            <FaArrowLeftLong width={15} hanging={11} />
+            Continue Shopping
+          </Link>
         </button>
       </div>
 
-      <div className="max-w-[360px] mx-auto w-full bg-soft-purple/20 p-5 max-md:mt-16 border border-soft-purple/70 rounded">
+      <div className="max-w-[360px] mx-auto w-full bg-soft-purple/20 p-5 max-md:mt-16 border border-soft-purple/70 rounded  max-h-[480px] h-full">
         <h2 className="text-xl md:text-xl font-semibold text-soft-purple ">
           Order Summary
         </h2>
-        <hr className="border-gray-300 my-5" />
+        <hr className="border-soft-purple my-5" />
 
         <div className="mb-6">
           <p className="text-sm font-medium uppercase">Delivery Address</p>
@@ -180,20 +162,21 @@ const Cart = () => {
 
           <p className="text-sm font-medium uppercase mt-6">Payment Method</p>
 
-          <select className="w-full border text-gray-500 border-gray-300 bg-white px-3 py-2 mt-2 outline-none ">
-            <option value="COD" className="scheme-dark">
-              Cash On Delivery
-            </option>
+          <select className="w-full border text-gray-500 border-gray-300 bg-white px-3 py-2 mt-2 outline-none appearance-none rounded-md">
+            <option value="">Select an option</option>
+            <option value="COD">Cash On Delivery</option>
             <option value="Online">Online Payment</option>
           </select>
         </div>
 
-        <hr className="border-gray-300" />
+        <hr className="border-soft-purple" />
 
         <div className=" mt-4 space-y-2">
           <p className="flex justify-between">
             <span>Price</span>
-            <span>$20</span>
+            <span>
+              <sup>$</sup>20
+            </span>
           </p>
           <p className="flex justify-between">
             <span>Shipping Fee</span>
@@ -201,11 +184,16 @@ const Cart = () => {
           </p>
           <p className="flex justify-between">
             <span>Tax (2%)</span>
-            <span>$20</span>
+            <span>
+              <sup>$</sup>0.8
+            </span>
           </p>
           <p className="flex justify-between text-lg font-medium mt-3">
             <span>Total Amount:</span>
-            <span>$20</span>
+            <span className="text-soft-purple">
+              <sup>$</sup>
+              20.8
+            </span>
           </p>
         </div>
 
