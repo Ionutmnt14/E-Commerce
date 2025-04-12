@@ -38,8 +38,39 @@ import banner_kids from "./banner_kids.png";
 import banner_men from "./banner_mens.png";
 import banner_women from "./banner_women.png";
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import { IoShirt, IoSparkles, IoRocket } from "react-icons/io5";
 
 export { banner_men, banner_women, banner_kids };
+
+export const banners = [
+  {
+    banner: banner_men,
+    category: "men",
+    index: 2,
+    text: "Exclusive Men’s Deals – Up to 50% Off!",
+    subtext: "Shop Now & Upgrade Your Style",
+    button: "Men’s Picks",
+    icon: <IoShirt />,
+  },
+  {
+    banner: banner_women,
+    category: "women",
+    index: 2,
+    text: " Fashion Finds You’ll Love – 30–50% Off!",
+    subtext: "Hot Styles. Cool Prices.",
+    button: "For Her",
+    icon: <IoSparkles />,
+  },
+  {
+    banner: banner_kids,
+    category: "kid",
+    index: 2,
+    text: "Up to 40% Off Kidswear – Shop the Cutest Deals!",
+    subtext: "Colorful Looks for Less!",
+    button: "For Littles",
+    icon: <IoRocket />,
+  },
+];
 
 export const options = [
   {
