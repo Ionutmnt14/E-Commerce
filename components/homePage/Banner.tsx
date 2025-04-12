@@ -18,10 +18,10 @@ const Banner = () => {
         <p className="w-full sm:ml-8 ml-0  text-center md:text-left text-lg md:text-2xl max-w-3xs md:max-w-sm">
           Elevate Your Wardrobe with Timeless Elegance
         </p>
-        <Button className="sm:ml-8 ml-0 max-w-3xs md:max-w-sm rounded-full group w-35 md:w-40 md:h-14 h-12 text-base md:text-lg cursor-pointer">
+        <Button className="sm:ml-8 ml-0 max-w-3xs md:max-w-sm rounded-full group w-32 md:w-40 md:h-14 h-10 cursor-pointer">
           Check Now{" "}
           <IoIosArrowRoundForward
-            style={{ width: "28px", height: "28px" }}
+            style={{ width: "24px", height: "24px", marginTop: "3px" }}
             className="group-hover:translate-x-1 transition-all duration-500"
           />
         </Button>

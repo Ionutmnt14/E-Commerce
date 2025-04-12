@@ -12,11 +12,11 @@ const CategoryBanner = ({
   banner: StaticImageData | string;
   icon: React.ReactNode;
   button: string;
-  text: string;
+  text: React.ReactNode;
   subtext: string;
 }) => {
   return (
-    <div className="flex flex-col md:flex-row w-full items-center justify-between mx-auto bg-gradient-to-b md:bg-gradient-to-r from-soft-purple/20 to-gray-950 to-70% rounded md:max-w-5xl max-w-sm pt-8 md:pt-4 gap-18 md:gap-0 md:p-8 ">
+    <div className="flex flex-col md:flex-row w-full items-center justify-between mx-auto bg-gradient-to-b md:bg-gradient-to-r from-soft-purple/20 to-gray-950 to-70% rounded md:max-w-5xl max-w-sm pt-8 md:pt-4 gap-18 md:gap-0 md:p-0 ">
       <div className="mx-10 flex flex-col items-center md:items-start gap-6">
         <h1 className="text-center md:text-left text-2xl  lg:text-4xl font-bold">
           {text}
@@ -27,11 +27,11 @@ const CategoryBanner = ({
           {icon}
         </Button>
       </div>
-      <div className="mx-10">
+      <div className="">
         <Image
           src={banner}
           alt="banners"
-          width={220}
+          width={300}
           height={220}
           className="bg-cover object-contain"
         />

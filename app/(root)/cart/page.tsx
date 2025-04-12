@@ -198,8 +198,9 @@ const Cart = () => {
             </span>
           </p>
         </div>
-
-        <Button className="w-full max-w-xl mt-4">Place Order</Button>
+        <Link href={"/cart/checkout"}>
+          <Button className="w-full max-w-xl mt-4">Place Order</Button>
+        </Link>
       </div>
     </div>
   );

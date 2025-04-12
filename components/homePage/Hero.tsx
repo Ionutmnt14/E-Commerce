@@ -12,17 +12,17 @@ const Hero = () => {
             <span className="font-bold text-soft-purple">Wearify</span> – Style
             that speaks.
           </h1>
-          <p className="text-center md:text-left max-w-3xl my-7 text-sm sm:text-base md:text-lg lg:text-xl">
+          <p className="text-center md:text-left max-w-3xl my-7 text-sm  md:text-base">
             Discover the latest trends and timeless classics, curated just for
             you. Wearify <br /> brings comfort, quality, and fashion
             together—because your wardrobe <br /> should be as unique as you
             are.
           </p>
-          <Button className="group max-w-3xs w-48 h-14 text-lg cursor-pointer">
+          <Button className="group max-w-3xs w-44 h-12  cursor-pointer">
             <p>Latest Collection</p>
             <IoIosArrowRoundForward
               className="group-hover:translate-x-1 transition-all duration-300"
-              style={{ width: "28px", height: "28px" }}
+              style={{ width: "24px", height: "24px", marginTop: "3px" }}
             />
           </Button>
         </div>

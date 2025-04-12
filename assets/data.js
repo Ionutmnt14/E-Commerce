@@ -47,7 +47,12 @@ export const banners = [
     banner: banner_men,
     category: "men",
     index: 2,
-    text: "Exclusive Men’s Deals – Up to 50% Off!",
+    text: (
+      <>
+        Exclusive Men’s Deals <br />
+        <span className="text-soft-purple">Up to 50% Off!</span>
+      </>
+    ),
     subtext: "Shop Now & Upgrade Your Style",
     button: "Men’s Picks",
     icon: <IoShirt />,
@@ -56,7 +61,12 @@ export const banners = [
     banner: banner_women,
     category: "women",
     index: 2,
-    text: " Fashion Finds You’ll Love – 30–50% Off!",
+    text: (
+      <>
+        Fashion Finds You’ll Love <br />
+        <span className="text-soft-purple">30–50% Off!</span>
+      </>
+    ),
     subtext: "Hot Styles. Cool Prices.",
     button: "For Her",
     icon: <IoSparkles />,
@@ -65,7 +75,12 @@ export const banners = [
     banner: banner_kids,
     category: "kid",
     index: 2,
-    text: "Up to 40% Off Kidswear – Shop the Cutest Deals!",
+    text: (
+      <>
+        <span className="text-soft-purple">Up to 40% Off</span> Kidswear <br />{" "}
+        Shop the Cutest Deals!
+      </>
+    ),
     subtext: "Colorful Looks for Less!",
     button: "For Littles",
     icon: <IoRocket />,

@@ -18,6 +18,7 @@ const Women = () => {
               image={image}
               new_price={new_price}
               old_price={old_price}
+              id={id}
             />
           ))}
         </div>

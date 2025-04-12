@@ -1,7 +1,7 @@
 import React from "react";
 import all_product, { banners } from "@/assets/data";
-import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
+import SortByBtn from "@/components/SortByBtn";
 import CategoryBanner from "@/components/categoryBanner/CategoryBanner";
 
 const page = async ({ params }: { params: { categoryId: string } }) => {
@@ -28,9 +28,11 @@ const page = async ({ params }: { params: { categoryId: string } }) => {
           icon={icon}
         />
       ))}
-      <div>
-        <p></p>
-        <Button></Button>
+      <div className="w-full flex justify-between items-center">
+        <p>
+          <span className="font-bold">Showing 1 - 12</span> out of 54 products
+        </p>
+        <SortByBtn />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
         {filteredProducts.map(
@@ -42,6 +44,7 @@ const page = async ({ params }: { params: { categoryId: string } }) => {
               new_price={new_price}
               old_price={old_price}
               category={category}
+              id={id}
             />
           )
         )}
