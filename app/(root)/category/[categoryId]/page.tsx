@@ -43,7 +43,7 @@ const page = async ({ params }: { params: { categoryId: string } }) => {
               image={image}
               new_price={new_price}
               old_price={old_price}
-              category={category}
+              category={category + " Clothing"}
               id={id}
             />
           )

@@ -1,67 +1,25 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { CiCircleRemove } from "react-icons/ci";
+import { useCart } from "@/context/Context";
+import { Button } from "@/components/ui/button";
 
 const Cart = () => {
   const [showAddress, setShowAddress] = useState(false);
+  const { getCartItemsDetails, removeFromCart } = useCart();
+  const cartProducts = getCartItemsDetails();
 
-  const products = [
-    {
-      name: "Running Shoes",
-      description: [
-        "Lightweight and comfortable",
-        "Breathable mesh upper",
-        "Ideal for jogging and casual wear",
-      ],
-      offerPrice: 250,
-      price: 200,
-      quantity: 1,
-      size: 42,
-      image:
-        "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage.png",
-      category: "Footwear",
-    },
-    {
-      name: "Running Shoes",
-      description: [
-        "Lightweight and comfortable",
-        "Breathable mesh upper",
-        "Ideal for jogging and casual wear",
-      ],
-      offerPrice: 250,
-      price: 200,
-      quantity: 1,
-      size: 42,
-      image:
-        "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage2.png",
-      category: "Footwear",
-    },
-    {
-      name: "Running Shoes",
-      description: [
-        "Lightweight and comfortable",
-        "Breathable mesh upper",
-        "Ideal for jogging and casual wear",
-      ],
-      offerPrice: 250,
-      price: 200,
-      quantity: 1,
-      size: 42,
-      image:
-        "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage3.png",
-      category: "Footwear",
-    },
-  ];
   return (
     <div className="flex flex-col md:flex-row py-16 max-w-6xl w-full h-full px-6 mx-auto gap-6">
       <div className="flex-1 max-w-4xl">
         <h1 className="text-3xl text-soft-purple font-bold mb-6 flex flex-col">
           Shopping Cart{" "}
-          <span className="text-sm text-white font-medium">3 Items</span>
+          <span className="text-sm text-white font-medium">
+            {cartProducts.length} Items
+          </span>
         </h1>
 
         <div className="grid grid-cols-[2fr_1fr_1fr]  text-base font-medium pb-3">
@@ -70,7 +28,7 @@ const Cart = () => {
           <p className="text-center">Action</p>
         </div>
 
-        {products.map((product, index) => (
+        {cartProducts.map((product, index) => (
           <div
             key={index}
             className="grid grid-cols-[2fr_1fr_1fr]  items-center text-sm md:text-base font-medium pt-3 border-b border-soft-purple/20 pb-3"
@@ -79,7 +37,11 @@ const Cart = () => {
               <div className="cursor-pointer w-24 h-24 flex items-center justify-center border border-soft-purple/70 rounded">
                 <img
                   className="max-w-full h-full object-cover"
-                  src={product.image}
+                  src={
+                    typeof product.image === "string"
+                      ? product.image
+                      : product.image.src
+                  }
                   alt={product.name}
                 />
               </div>
@@ -90,34 +52,25 @@ const Cart = () => {
                     Size: <span>{product.size || "N/A"}</span>
                   </p>
                   <div className="flex items-center text-gray-500 text-2xs">
-                    <p>Quantity:</p>
-                    <select className="outline-none text-gray-500">
-                      {Array(5)
-                        .fill("")
-                        .map((_, index) => (
-                          <option key={index} value={index + 1}>
-                            {index + 1}
-                          </option>
-                        ))}
-                    </select>
+                    <p>Quantity: {product.quantity}</p>
                   </div>
                 </div>
               </div>
             </div>
             <p className="text-center text-soft-purple">
               <sup>$</sup>
-              {product.offerPrice * product.quantity}
+              {product.new_price * product.quantity}
             </p>
-            <button className="cursor-pointer mx-auto text-red-500">
-              <CiCircleRemove
-                width={40}
-                hanging={20}
-                style={{ width: "30px", height: "30px" }}
-              />
+            <button
+              className="cursor-pointer mx-auto text-red-500"
+              onClick={() => removeFromCart(product.id)}
+            >
+              <CiCircleRemove style={{ width: "30px", height: "30px" }} />
             </button>
           </div>
         ))}
 
+        {/* Continue Shopping */}
         <button className="group cursor-pointer flex items-center mt-8 gap-2 text-soft-purple font-medium">
           <Link href={"/"} className="flex items-center justify-center gap-1">
             <FaArrowLeftLong width={15} hanging={11} />

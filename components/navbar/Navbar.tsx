@@ -9,8 +9,12 @@ import { IoCartOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { MdClose, MdMenu } from "react-icons/md";
 import { Button } from "../ui/button";
+import { useCart } from "@/context/Context";
 
 const Navbar = () => {
+  const { getTotalItemCount } = useCart(); // Access the getTotalItemCount function
+  const totalItemCount = getTotalItemCount();
+
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen(!open);
@@ -54,8 +58,8 @@ const Navbar = () => {
             <Link href={"/cart"}>
               <IoCartOutline className="size-7" />
             </Link>
-            <button className="absolute -top-2 -right-3 text-xs text-white bg-soft-purple w-[18px] h-[18px] rounded-full">
-              3
+            <button className="absolute -top-1.5 -right-2.5 text-xs text-white bg-soft-purple w-[18px] h-[18px] rounded-full">
+              {totalItemCount}
             </button>
           </div>
 
